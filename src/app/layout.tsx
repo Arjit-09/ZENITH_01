@@ -1,46 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
-import './globals.css';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-body',
-  display: 'swap',
-  weight: ['300', '400', '500', '600', '700', '800']
-});
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-heading',
-  display: 'swap',
-  weight: ['400', '500', '600', '700', '800']
-});
 
 export const viewport: Viewport = {
-  themeColor: '#0A1A2F',
+  themeColor: '#000000',
   width: 'device-width',
   initialScale: 1
 };
 
 export const metadata: Metadata = {
-  title: 'Zenith — Engineering Intelligent Digital Solutions',
-  description: 'Zenith delivers enterprise-grade AI/ML, chatbot integration, full-stack, e-commerce, blockchain, and IoT solutions. Transform your business with cutting-edge technology.',
-  keywords: [
-    'AI ML projects',
-    'chatbot integration',
-    'full stack website',
-    'ecommerce',
-    'blockchain',
-    'IoT',
-    'Zenith',
-    'web development'
-  ],
-  openGraph: {
-    title: 'Zenith — Engineering Intelligent Digital Solutions',
-    description: 'Transform your business with AI/ML, chatbot, full-stack, e-commerce, blockchain and IoT solutions.',
-    type: 'website',
-    url: 'https://zenith-portfolio.vercel.app'
-  }
+  title: 'ZENITH — ML/AI Engineering Collective',
+  description: 'ZENITH is a collective of ML/AI Engineers specializing in GenAI, Computer Vision, Full-Stack Web, and IoT solutions.'
 };
 
 export default function RootLayout({
@@ -49,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="antialiased">
+    <html lang="en" style={{ margin: 0, padding: 0, height: '100%', overflow: 'hidden', background: '#000000' }}>
+      <body style={{ margin: 0, padding: 0, height: '100%', overflow: 'hidden', background: '#000000' }}>
         {children}
       </body>
     </html>

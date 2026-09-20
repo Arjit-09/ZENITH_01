@@ -1,47 +1,18 @@
-import React from 'react';
-import ParticleCanvas from '@/components/ParticleCanvas';
-import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import Stats from '@/components/Stats';
-import Services from '@/components/Services';
-import About from '@/components/About';
-import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
+'use client';
 
 export default function Home() {
   return (
-    <main>
-      {/* Particle Canvas Background */}
-      <ParticleCanvas />
-
-      {/* Navigation */}
-      <Navbar />
-
-      {/* Hero Section */}
-      <Hero />
-
-      {/* Key Numbers / Stats */}
-      <Stats />
-
-      {/* Capabilities & Services */}
-      <Services />
-
-      {/* About Section */}
-      <About />
-
-      {/* Project Portfolio */}
-      <Projects />
-
-      {/* Strategic Consultation / Contact */}
-      <Contact />
-
-      {/* Footer */}
-      <Footer />
-
-      {/* Scroll-to-Top Action */}
-      <BackToTop />
+    <main style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh', overflow: 'hidden', background: '#000000', margin: 0, padding: 0 }}>
+      <iframe
+        src="/portfolio.html"
+        style={{
+          width: '100%',
+          height: '100%',
+          border: 'none',
+          display: 'block'
+        }}
+        title="ZENITH — ML/AI Engineering Collective"
+      />
     </main>
   );
 }
