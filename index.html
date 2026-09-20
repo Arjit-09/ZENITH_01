@@ -3,660 +3,392 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenith — Engineering Intelligent Digital Solutions</title>
-  <meta name="description" content="Zenith delivers enterprise-grade AI/ML, chatbot integration, full-stack, e-commerce, blockchain, and IoT solutions. Transform your business with cutting-edge technology.">
-  <meta name="keywords" content="AI ML projects, chatbot integration, full stack website, ecommerce, blockchain, IoT, Zenith">
-  <meta property="og:title" content="Zenith — Engineering Intelligent Digital Solutions">
-  <meta property="og:description" content="Transform your business with AI/ML, chatbot, full-stack, e-commerce, blockchain and IoT solutions.">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts -->
+  <title>ZENITH — ML/AI Engineering Collective</title>
+  <meta name="description" content="ZENITH is a collective of ML/AI Engineers specializing in GenAI, Computer Vision, Full-Stack Web, and IoT solutions.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
+<!-- STARFIELD BG -->
+<div class="starfield-bg"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" id="navbar">
-    <div class="container">
-      <a href="#home" class="nav-brand">
-        <strong>Zenith</strong> — Engineering Intelligent Digital Solutions
-      </a>
-      <div class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-cta">Book Now</a>
+<!-- NAVIGATION -->
+<nav id="nav" class="nav">
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-icon">&#8853;</span>
+    <span class="nav-logo-text pixel-text">ZENITH</span>
+  </a>
+  <div class="nav-links">
+    <a href="#about"      class="nav-link" id="nav-about">About</a>
+    <a href="#team"       class="nav-link" id="nav-team">Team</a>
+    <a href="#projects"   class="nav-link" id="nav-projects">Projects</a>
+    <a href="#skills"     class="nav-link" id="nav-skills">Skills</a>
+    <a href="#experience" class="nav-link" id="nav-experience">Experience</a>
+    <a href="#contact"    class="nav-link" id="nav-contact">Contact</a>
+  </div>
+  <button class="nav-menu-btn pixel-text" id="nav-menu-btn" aria-label="Toggle menu">&#9776;</button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <a href="#about"      class="mobile-link">About</a>
+  <a href="#team"       class="mobile-link">Team</a>
+  <a href="#projects"   class="mobile-link">Projects</a>
+  <a href="#skills"     class="mobile-link">Skills</a>
+  <a href="#experience" class="mobile-link">Experience</a>
+  <a href="#contact"    class="mobile-link">Contact</a>
+</div>
+
+<!-- SECTION 1: HERO -->
+<section id="hero" class="hero section-snap">
+  <canvas id="starfield" class="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-left">
+      <h1 class="hero-title pixel-text">ZENITH</h1>
+      <p class="hero-subtitle pixel-text">ML/AI Engineering<br>Collective</p>
+      <div class="hero-info-box">
+        <span class="hero-tag pixel-text">GenAI &middot; Vision &middot; Full-Stack</span>
+        <p class="hero-desc pixel-text">Building intelligent systems that bridge research and reality</p>
       </div>
-      <button class="mobile-toggle" aria-label="Open navigation menu">
-        <i class="fas fa-bars"></i>
-      </button>
     </div>
-  </nav>
+    <div class="hero-center">
+      <canvas id="planet-canvas" class="planet-canvas"></canvas>
+    </div>
+    <div class="hero-right">
+      <p class="hero-cta-label pixel-text">ML / AI Collective</p>
+      <p class="hero-cta-text pixel-text">Build.<br>Train.<br>Deploy.</p>
+      <div class="hero-cta-btns">
+        <a href="#projects" class="cta-btn pixel-text" id="cta-projects">View Projects &rsaquo;</a>
+        <a href="#contact"  class="cta-btn cta-btn-outline pixel-text" id="cta-contact">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+    <span class="hero-swipe-label pixel-text">Scroll to explore</span>
+  </div>
+</section>
 
-  <!-- Mobile Navigation -->
-  <div class="mobile-overlay"></div>
-  <div class="mobile-nav">
-    <button class="mobile-nav-close" aria-label="Close menu">
-      <i class="fas fa-times"></i>
-    </button>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-primary" style="margin-top: 20px; justify-content: center;">Book Now</a>
+<!-- SECTION 2: ABOUT -->
+<section id="about" class="section-about section-snap">
+  <div class="about-container">
+    <div class="about-left">
+      <div class="section-label pixel-text">// Who we are</div>
+      <div class="about-table">
+        <div class="about-row reveal-item"><span class="about-from pixel-text">Automation</span><span class="about-arrow">&mdash;&mdash;&rarr;</span><span class="about-to pixel-text">Intuition</span></div>
+        <div class="about-row reveal-item"><span class="about-from pixel-text">Data</span><span class="about-arrow">&mdash;&mdash;&rarr;</span><span class="about-to pixel-text">Insight</span></div>
+        <div class="about-row reveal-item"><span class="about-from pixel-text">Models</span><span class="about-arrow">&mdash;&mdash;&rarr;</span><span class="about-to pixel-text">Understanding</span></div>
+        <div class="about-row reveal-item"><span class="about-from pixel-text">Research</span><span class="about-arrow">&mdash;&mdash;&rarr;</span><span class="about-to pixel-text">Impact</span></div>
+        <div class="about-row reveal-item"><span class="about-from pixel-text">Code</span><span class="about-arrow">&mdash;&mdash;&rarr;</span><span class="about-to pixel-text">Solutions</span></div>
+      </div>
+    </div>
+    <div class="about-right">
+      <canvas id="matrix-canvas" class="matrix-canvas"></canvas>
+      <div class="about-bio">
+        <p class="pixel-text about-bio-main">We are a trio of engineers who believe AI is not a product — it's a paradigm shift. We build GenAI applications, train vision models, and ship production-grade web platforms across domains where it matters most.</p>
+        <p class="pixel-text about-bio-sub">From conversational AI to full-stack e-commerce — we engineer the gap between research papers and production systems.</p>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrows pixel-text">&#8964;&#8964;</div><span class="scroll-label pixel-text">Continue exploring</span></div>
+</section>
+
+<!-- SECTION 3: STATS -->
+<section id="stats" class="section-stats section-snap">
+  <div class="section-phase-header pixel-text">
+    <span class="phase-arrow">&#8249;</span>
+    <span class="phase-title">Exploration phase</span>
+    <span class="phase-arrow">&#8250;</span>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card reveal-item">
+      <div class="stat-number pixel-text" data-target="3">0</div>
+      <div class="stat-divider"></div>
+      <div class="stat-title pixel-text">Engineers, one vision</div>
+      <p class="stat-desc pixel-text">A tight-knit collective building AI and web systems that scale from prototype to production.</p>
+    </div>
+    <div class="stat-card reveal-item">
+      <div class="stat-number pixel-text" data-target="40" data-suffix="+">0</div>
+      <div class="stat-divider"></div>
+      <div class="stat-title pixel-text">Projects shipped</div>
+      <p class="stat-desc pixel-text">Across GenAI, computer vision, full-stack web, IoT, and machine learning pipelines.</p>
+    </div>
+    <div class="stat-card reveal-item">
+      <div class="stat-number pixel-text" data-target="5" data-suffix="+">0</div>
+      <div class="stat-divider"></div>
+      <div class="stat-title pixel-text">Years combined exp.</div>
+      <p class="stat-desc pixel-text">Deep expertise in ML research, AI engineering, web development, and edge computing.</p>
+    </div>
+    <div class="stat-card reveal-item">
+      <div class="stat-number pixel-text" data-target="20" data-suffix="+">0</div>
+      <div class="stat-divider"></div>
+      <div class="stat-title pixel-text">Technologies mastered</div>
+      <p class="stat-desc pixel-text">From PyTorch to React, from CUDA to Node.js — full-stack AI engineering.</p>
+    </div>
+    <div class="stat-card reveal-item">
+      <div class="stat-number pixel-text">&#8734;</div>
+      <div class="stat-divider"></div>
+      <div class="stat-title pixel-text">Curiosity, no end</div>
+      <p class="stat-desc pixel-text">The AGI odyssey has no finish line. We are only at the beginning of infinity.</p>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrows pixel-text">&#8964;&#8964;</div><span class="scroll-label pixel-text">Meet the team</span></div>
+</section>
+
+<!-- SECTION 4: TEAM -->
+<section id="team" class="section-team section-snap">
+  <div class="section-phase-header pixel-text">
+    <span class="phase-arrow">&#8249;</span>
+    <span class="phase-title">The collective</span>
+    <span class="phase-arrow">&#8250;</span>
+  </div>
+  <div class="team-grid">
+
+    <article class="team-card reveal-item" id="card-arijit">
+      <div class="team-card-top-line"></div>
+      <div class="team-card-header">
+        <div class="team-avatar"><canvas class="avatar-canvas" width="80" height="80" data-initials="AS" data-index="0"></canvas></div>
+        <div class="team-card-meta">
+          <h2 class="team-name pixel-text">Arijit Sharma</h2>
+          <p class="team-role pixel-text">AI / ML Engineer</p>
+          <p class="team-company pixel-text">@ Hestabit Technologies</p>
+        </div>
+      </div>
+      <p class="team-bio pixel-text">I'm an AI/ML Engineer at Hestabit Technologies, where I design and ship GenAI applications spanning conversational AI, RAG pipelines, and multimodal reasoning.</p>
+      <div class="team-edu pixel-text"><span class="edu-icon">&#9672;</span> B.Tech &mdash; Computer Science</div>
+      <div class="team-exp pixel-text"><span class="edu-icon">&#9672;</span> 3+ Years Experience &mdash; AI/ML</div>
+      <div class="team-tags">
+        <span class="tag pixel-text">GenAI</span>
+        <span class="tag pixel-text">RAG</span>
+        <span class="tag pixel-text">PyTorch</span>
+        <span class="tag pixel-text">Computer Vision</span>
+        <span class="tag pixel-text">SLAM</span>
+        <span class="tag pixel-text">CUDA</span>
+      </div>
+      <div class="team-links">
+        <a href="mailto:sharmaarjit813@gmail.com" class="team-link pixel-text" id="arijit-email">&#10003; Email</a>
+        <a href="#" class="team-link pixel-text" id="arijit-github">&#8853; GitHub</a>
+        <a href="#" class="team-link pixel-text" id="arijit-linkedin">&#9645; LinkedIn</a>
+      </div>
+    </article>
+
+    <article class="team-card reveal-item" id="card-avinash">
+      <div class="team-card-top-line"></div>
+      <div class="team-card-header">
+        <div class="team-avatar"><canvas class="avatar-canvas" width="80" height="80" data-initials="AL" data-index="1"></canvas></div>
+        <div class="team-card-meta">
+          <h2 class="team-name pixel-text">Avinash Lodhi</h2>
+          <p class="team-role pixel-text">[ Role &mdash; Coming Soon ]</p>
+          <p class="team-company pixel-text">@ TBD</p>
+        </div>
+      </div>
+      <p class="team-bio pixel-text">A builder at heart, working at the intersection of intelligence and engineering. Details loading &mdash; the best chapters are yet to be written. Watch this space.</p>
+      <div class="team-edu pixel-text"><span class="edu-icon">&#9672;</span> [ Education &mdash; TBD ]</div>
+      <div class="team-exp pixel-text"><span class="edu-icon">&#9672;</span> [ Experience &mdash; TBD ]</div>
+      <div class="team-tags"><span class="tag pixel-text tag-dim">[ Skills TBD ]</span></div>
+      <div class="team-links">
+        <a href="#" class="team-link pixel-text team-link-dim" id="avinash-email">&#10003; Email</a>
+        <a href="#" class="team-link pixel-text team-link-dim" id="avinash-github">&#8853; GitHub</a>
+        <a href="#" class="team-link pixel-text team-link-dim" id="avinash-linkedin">&#9645; LinkedIn</a>
+      </div>
+    </article>
+
+    <article class="team-card reveal-item" id="card-lavi">
+      <div class="team-card-top-line"></div>
+      <div class="team-card-header">
+        <div class="team-avatar"><canvas class="avatar-canvas" width="80" height="80" data-initials="LS" data-index="2"></canvas></div>
+        <div class="team-card-meta">
+          <h2 class="team-name pixel-text">Lavi Singh</h2>
+          <p class="team-role pixel-text">[ Role &mdash; Coming Soon ]</p>
+          <p class="team-company pixel-text">@ TBD</p>
+        </div>
+      </div>
+      <p class="team-bio pixel-text">Engineering systems that think, learn, and adapt. A story still being written &mdash; in code, in models, in impact. More details arriving soon on this channel.</p>
+      <div class="team-edu pixel-text"><span class="edu-icon">&#9672;</span> [ Education &mdash; TBD ]</div>
+      <div class="team-exp pixel-text"><span class="edu-icon">&#9672;</span> [ Experience &mdash; TBD ]</div>
+      <div class="team-tags"><span class="tag pixel-text tag-dim">[ Skills TBD ]</span></div>
+      <div class="team-links">
+        <a href="#" class="team-link pixel-text team-link-dim" id="lavi-email">&#10003; Email</a>
+        <a href="#" class="team-link pixel-text team-link-dim" id="lavi-github">&#8853; GitHub</a>
+        <a href="#" class="team-link pixel-text team-link-dim" id="lavi-linkedin">&#9645; LinkedIn</a>
+      </div>
+    </article>
+
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrows pixel-text">&#8964;&#8964;</div><span class="scroll-label pixel-text">See our work</span></div>
+</section>
+
+<!-- SECTION 5: PROJECTS (Kimi-style orbital ring + fan carousel) -->
+<section id="projects" class="section-projects section-snap">
+  <canvas id="project-bg-canvas" class="project-bg-canvas"></canvas>
+
+  <!-- ORBITAL RING VIEW -->
+  <div id="proj-wheel-view" class="proj-wheel-view">
+    <div class="section-phase-header pixel-text">
+      <span class="phase-arrow">&#8249;</span>
+      <span class="phase-title">Featured projects</span>
+      <span class="phase-arrow">&#8250;</span>
+    </div>
+    <div class="proj-category-bar">
+      <button class="proj-cat-btn active pixel-text" data-cat="all"       id="pcat-all">All</button>
+      <button class="proj-cat-btn pixel-text"        data-cat="aiml"      id="pcat-aiml">AI / ML</button>
+      <button class="proj-cat-btn pixel-text"        data-cat="cv"        id="pcat-cv">Computer Vision</button>
+      <button class="proj-cat-btn pixel-text"        data-cat="fullstack" id="pcat-fs">Full Stack</button>
+      <button class="proj-cat-btn pixel-text"        data-cat="ecommerce" id="pcat-ec">E-Commerce</button>
+      <button class="proj-cat-btn pixel-text"        data-cat="iot"       id="pcat-iot">IoT</button>
+    </div>
+    <div class="proj-orbit-wrapper">
+      <div class="proj-orbit-line"></div>
+      <canvas id="proj-planet-canvas" class="proj-planet-canvas"></canvas>
+      <div id="proj-orbit-ring" class="proj-orbit-ring"></div>
+      <div class="orbit-center-label">
+        <span id="orbit-cat-label" class="pixel-text">Click a project</span>
+        <span class="orbit-center-sub pixel-text">to explore</span>
+      </div>
+    </div>
+    <div class="proj-wheel-hint pixel-text">[ Click any project card to view details ]</div>
   </div>
 
-  <!-- ===== HERO SECTION ===== -->
-  <section class="hero" id="home">
-    <div class="hero-bg">
-      <img src="images/hero-bg.jpg" alt="Zenith Technology Workspace" loading="eager">
-    </div>
-    <div class="hero-circle hero-circle--1"></div>
-    <div class="hero-circle hero-circle--2"></div>
-
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Precision Technology Solutions</h1>
-        <p>We engineer intelligent digital solutions — from AI-powered platforms to blockchain ecosystems — empowering businesses to innovate, scale, and lead.</p>
-        <div class="hero-btns">
-          <a href="#projects" class="btn btn-primary">
-            <i class="fas fa-layer-group"></i> Explore Projects
-          </a>
-          <a href="#contact" class="btn btn-outline" style="border-color: rgba(255,255,255,0.4); color: #fff;">
-            <i class="fas fa-phone-alt"></i> Get Free Consultation
-          </a>
-        </div>
+  <!-- FAN / ARC CAROUSEL VIEW -->
+  <div id="proj-carousel-view" class="proj-carousel-view" style="display:none;">
+    <div class="carousel-top-bar">
+      <button class="carousel-back-btn pixel-text" id="carousel-back">&#8249; Back to projects</button>
+      <div class="carousel-title-bar">
+        <button class="carousel-title-arrow pixel-text" id="carousel-prev">&#8249;</button>
+        <span id="carousel-title" class="carousel-title pixel-text">Project Name</span>
+        <button class="carousel-title-arrow pixel-text" id="carousel-next">&#8250;</button>
       </div>
+      <div style="width:160px;"></div><!-- spacer -->
     </div>
-
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
+    <div class="carousel-stage" id="carousel-stage"></div>
+    <div class="carousel-cta-row">
+      <a href="#" class="carousel-cta pixel-text" id="carousel-cta-link" target="_blank" rel="noopener">View Live Site &#8250;</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ===== STATS BAR ===== -->
-  <section class="stats">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-item reveal">
-          <div class="stat-number" data-target="50" data-suffix="+">0</div>
-          <div class="stat-label">Projects Delivered</div>
-        </div>
-        <div class="stat-item reveal delay-1">
-          <div class="stat-number" data-target="30" data-suffix="+">0</div>
-          <div class="stat-label">Happy Clients</div>
-        </div>
-        <div class="stat-item reveal delay-2">
-          <div class="stat-number" data-target="5" data-suffix="+">0</div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-item reveal delay-3">
-          <div class="stat-number" data-target="15" data-suffix="+">0</div>
-          <div class="stat-label">Expert Engineers</div>
-        </div>
+<!-- SECTION 6: SKILLS -->
+<section id="skills" class="section-skills section-snap">
+  <div class="section-phase-header pixel-text">
+    <span class="phase-arrow">&#8249;</span>
+    <span class="phase-title">Tech arsenal</span>
+    <span class="phase-arrow">&#8250;</span>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-card reveal-item" id="skill-python"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Python</div></div>
+    <div class="skill-card reveal-item" id="skill-cpp"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">C++</div></div>
+    <div class="skill-card reveal-item" id="skill-torch"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">PyTorch / TF</div></div>
+    <div class="skill-card reveal-item" id="skill-ros"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">ROS / ROS2</div></div>
+    <div class="skill-card reveal-item" id="skill-slam"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">SLAM / LiDAR</div></div>
+    <div class="skill-card reveal-item" id="skill-cv"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Computer Vision</div></div>
+    <div class="skill-card reveal-item" id="skill-react"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">React / Next.js</div></div>
+    <div class="skill-card reveal-item" id="skill-node"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Node.js</div></div>
+    <div class="skill-card reveal-item" id="skill-docker"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Docker / K8s</div></div>
+    <div class="skill-card reveal-item" id="skill-linux"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Linux / Bash</div></div>
+    <div class="skill-card reveal-item" id="skill-sql"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">SQL / PostgreSQL</div></div>
+    <div class="skill-card reveal-item" id="skill-js"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">JS / TypeScript</div></div>
+    <div class="skill-card reveal-item" id="skill-api"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">FastAPI / Flask</div></div>
+    <div class="skill-card reveal-item" id="skill-git"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Git / GitHub</div></div>
+    <div class="skill-card reveal-item" id="skill-cuda"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">CUDA / GPU</div></div>
+    <div class="skill-card reveal-item" id="skill-ocv"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">OpenCV</div></div>
+    <div class="skill-card reveal-item" id="skill-stripe"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">Stripe / Payments</div></div>
+    <div class="skill-card reveal-item" id="skill-mongo"><div class="skill-icon pixel-text">&#11041;</div><div class="skill-name pixel-text">MongoDB</div></div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrows pixel-text">&#8964;&#8964;</div><span class="scroll-label pixel-text">Career timeline</span></div>
+</section>
+
+<!-- SECTION 7: EXPERIENCE -->
+<section id="experience" class="section-experience section-snap">
+  <div class="section-phase-header pixel-text">
+    <span class="phase-arrow">&#8249;</span>
+    <span class="phase-title">Career trajectory</span>
+    <span class="phase-arrow">&#8250;</span>
+  </div>
+  <div class="experience-timeline">
+    <svg class="timeline-svg" viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <path d="M 80,250 C 180,250 240,140 380,140 C 520,140 580,200 720,170 C 860,140 920,80 1120,80"
+            stroke="rgba(255,255,255,0.18)" stroke-width="1" fill="none" stroke-dasharray="5,5"/>
+      <circle cx="80"  cy="250" r="28" fill="#000" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="80"  y="255" text-anchor="middle" font-family="VT323,monospace" font-size="20" fill="white">01</text>
+      <circle cx="380" cy="140" r="28" fill="#000" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="380" y="145" text-anchor="middle" font-family="VT323,monospace" font-size="20" fill="white">02</text>
+      <circle cx="720" cy="170" r="28" fill="#000" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <text x="720" y="175" text-anchor="middle" font-family="VT323,monospace" font-size="20" fill="white">03</text>
+      <circle cx="1120" cy="80" r="28" fill="#000" stroke="white" stroke-width="1.5" filter="url(#glow)"/>
+      <text x="1120" y="85" text-anchor="middle" font-family="VT323,monospace" font-size="20" fill="white">04</text>
+      <circle id="timeline-traveler" r="5" fill="white" opacity="0.9"/>
+    </svg>
+    <div class="timeline-labels">
+      <div class="timeline-label" style="left:6.6%">
+        <div class="tl-title pixel-text">B.Tech CS</div>
+        <div class="tl-sub pixel-text">Computer Science</div>
+        <div class="tl-date pixel-text">Foundation</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ===== SERVICES SECTION ===== -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="services-header reveal">
-        <span class="section-label">Our Expertise</span>
-        <h2 class="section-title">Comprehensive Digital <span>Solutions</span></h2>
-        <p class="section-subtitle">From intelligent automation to decentralized systems — end-to-end technology solutions for every digital challenge.</p>
+      <div class="timeline-label" style="left:31.6%">
+        <div class="tl-title pixel-text">First Steps</div>
+        <div class="tl-sub pixel-text">ML / AI Internship</div>
+        <div class="tl-date pixel-text">Early Career</div>
       </div>
-
-      <div class="services-grid">
-        <!-- AI/ML -->
-        <div class="service-card reveal delay-1">
-          <div class="service-icon">
-            <i class="fas fa-brain"></i>
-          </div>
-          <h3>AI & Machine Learning</h3>
-          <p>Custom AI solutions including computer vision, NLP, predictive analytics, and deep learning models that transform raw data into actionable insights.</p>
-        </div>
-
-        <!-- Chatbot -->
-        <div class="service-card reveal delay-2">
-          <div class="service-icon">
-            <i class="fas fa-robot"></i>
-          </div>
-          <h3>Chatbot Integration</h3>
-          <p>Intelligent conversational AI chatbots seamlessly integrated into your website for customer support, lead generation, and automated engagement.</p>
-        </div>
-
-        <!-- Full Stack -->
-        <div class="service-card reveal delay-3">
-          <div class="service-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3>Full-Stack Development</h3>
-          <p>Scalable, high-performance web applications built with modern frameworks — from responsive frontends to robust backend architectures and APIs.</p>
-        </div>
-
-        <!-- E-Commerce -->
-        <div class="service-card reveal delay-4">
-          <div class="service-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <h3>E-Commerce Platforms</h3>
-          <p>Feature-rich online stores with payment gateway integration, inventory management, and conversion-optimized designs that drive revenue growth.</p>
-        </div>
-
-        <!-- Blockchain -->
-        <div class="service-card reveal delay-5">
-          <div class="service-icon">
-            <i class="fas fa-cubes"></i>
-          </div>
-          <h3>Blockchain Solutions</h3>
-          <p>Decentralized applications, smart contracts, NFT marketplaces, and supply chain solutions built on Ethereum, Polygon, and Solana ecosystems.</p>
-        </div>
-
-        <!-- IoT -->
-        <div class="service-card reveal delay-6">
-          <div class="service-icon">
-            <i class="fas fa-microchip"></i>
-          </div>
-          <h3>IoT Projects</h3>
-          <p>Connected device ecosystems with real-time monitoring dashboards, sensor integration, edge computing, and automated control systems.</p>
-        </div>
+      <div class="timeline-label" style="left:60%">
+        <div class="tl-title pixel-text">AI Engineer</div>
+        <div class="tl-sub pixel-text">GenAI &middot; RAG &middot; Vision</div>
+        <div class="tl-date pixel-text">3+ Years XP</div>
+      </div>
+      <div class="timeline-label" style="left:93.3%">
+        <div class="tl-title pixel-text">Hestabit</div>
+        <div class="tl-sub pixel-text">AI / ML Engineer</div>
+        <div class="tl-date pixel-text">Present &#9679;</div>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrows pixel-text">&#8964;&#8964;</div><span class="scroll-label pixel-text">Get in touch</span></div>
+</section>
 
-  <!-- ===== ABOUT SECTION ===== -->
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content reveal-left">
-          <span class="section-label">About Zenith</span>
-          <h2 class="section-title">Advancing Digital <span>Performance</span></h2>
-          <div class="gold-divider"></div>
-          <p>Zenith provides enterprise-grade technology solutions that empower clients to operate efficiently, securely, and at scale across diverse industries.</p>
-          <p><em>Founded by senior systems architects, the firm delivers comprehensive cloud, AI/ML, and full-stack development solutions that align technology investments with measurable business objectives.</em></p>
-          <p>Our specialists demonstrate proven expertise across diverse industries, implementing secure infrastructures, optimizing workflows, and facilitating seamless digital transformation. Through iterative collaboration and rigorous quality assurance, the organization ensures every deployment remains scalable, resilient, and compliant with prevailing standards.</p>
-
-          <div class="about-features">
-            <div class="about-feature">
-              <div class="about-feature-icon">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div>
-                <h4>End-to-End Delivery</h4>
-                <p>Complete project lifecycle from ideation to deployment and maintenance.</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
-              <div>
-                <h4>Quality Assured</h4>
-                <p>Rigorous testing, code reviews, and security audits on every project.</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <div class="about-feature-icon">
-                <i class="fas fa-headset"></i>
-              </div>
-              <div>
-                <h4>Ongoing Support</h4>
-                <p>Dedicated post-launch support and continuous improvement cycles.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-image reveal-right">
-          <img src="images/about.jpg" alt="Zenith Office — Modern Tech Workspace" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PROJECTS SECTION ===== -->
-  <section class="projects" id="projects">
-    <div class="container">
-      <div class="projects-header">
-        <div>
-          <span class="section-label">Our Work</span>
-          <h2 class="section-title">Project <span>Portfolio</span></h2>
-        </div>
-      </div>
-
-      <!-- Filter Tabs -->
-      <div class="filter-tabs reveal">
-        <button class="filter-tab active" data-filter="all">All Projects</button>
-        <button class="filter-tab" data-filter="aiml">AI / ML</button>
-        <button class="filter-tab" data-filter="chatbot">Chatbot</button>
-        <button class="filter-tab" data-filter="fullstack">Full-Stack</button>
-        <button class="filter-tab" data-filter="ecommerce">E-Commerce</button>
-        <button class="filter-tab" data-filter="blockchain">Blockchain</button>
-        <button class="filter-tab" data-filter="iot">IoT</button>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="projects-grid">
-
-        <!-- 1. Mantronix Solutions (Full-Stack) -->
-        <a href="https://www.mantronixsolutions.com/" target="_blank" rel="noopener noreferrer" class="project-card reveal" data-category="fullstack">
-          <div class="project-image">
-            <img src="images/project-mantronix.jpg" alt="Mantronix Solutions Platform" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">Full-Stack</span>
-            <span class="project-link-badge">View Live →</span>
-          </div>
-          <div class="project-info">
-            <h3>Mantronix Solutions</h3>
-            <p>Automation & robotics integrator website with product catalog, project gallery, and lead generation system for India's leading welding automation firm.</p>
-            <div class="project-tags">
-              <span class="chip">Next.js</span>
-              <span class="chip">React</span>
-              <span class="chip">SEO</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 2. DDelice Bakery (E-Commerce) -->
-        <a href="https://ddelice-love-at-first-bite.vercel.app" target="_blank" rel="noopener noreferrer" class="project-card reveal delay-1" data-category="ecommerce">
-          <div class="project-image">
-            <img src="images/project-ddelice.jpg" alt="DDelice Bakery E-Commerce" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">E-Commerce</span>
-            <span class="project-link-badge">View Live →</span>
-          </div>
-          <div class="project-info">
-            <h3>DDelice Bakery</h3>
-            <p>Premium eggless bakery website with 3D artisan product showcase, dark chocolate aesthetic, product catalog, and ordering system.</p>
-            <div class="project-tags">
-              <span class="chip">Next.js</span>
-              <span class="chip">CSS Modules</span>
-              <span class="chip">Animations</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 3. NewLifeMedz (E-Commerce) -->
-        <a href="https://www.newlifemedz.com/" target="_blank" rel="noopener noreferrer" class="project-card reveal delay-2" data-category="ecommerce">
-          <div class="project-image">
-            <img src="images/project-newlifemedz.jpg" alt="NewLifeMedz Online Pharmacy" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">E-Commerce</span>
-            <span class="project-link-badge">View Live →</span>
-          </div>
-          <div class="project-info">
-            <h3>NewLifeMedz</h3>
-            <p>Licensed online pharmacy platform with product catalog, cart system, user authentication, and health blog — HIPAA compliant with SSL encryption.</p>
-            <div class="project-tags">
-              <span class="chip">Next.js</span>
-              <span class="chip">Payment Gateway</span>
-              <span class="chip">HIPAA</span>
-            </div>
-          </div>
-        </a>
-
-        <!-- 4. NeuralVision AI (AI/ML) -->
-        <div class="project-card reveal" data-category="aiml">
-          <div class="project-image">
-            <img src="images/project-neuralvision.jpg" alt="NeuralVision AI Dashboard" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">AI / ML</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>NeuralVision AI</h3>
-            <p>AI-powered image recognition platform for industrial quality control with real-time defect detection, CNN-based models, and production analytics.</p>
-            <div class="project-tags">
-              <span class="chip">TensorFlow</span>
-              <span class="chip">Computer Vision</span>
-              <span class="chip">Python</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. SmartAssist Bot (Chatbot) -->
-        <div class="project-card reveal delay-1" data-category="chatbot">
-          <div class="project-image">
-            <img src="images/project-smartassist.jpg" alt="SmartAssist Chatbot Interface" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">Chatbot</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>SmartAssist Bot</h3>
-            <p>AI chatbot integrated with e-commerce platforms for customer support, order tracking, product recommendations, and automated engagement flows.</p>
-            <div class="project-tags">
-              <span class="chip">Dialogflow</span>
-              <span class="chip">Node.js</span>
-              <span class="chip">NLP</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. ChainVault (Blockchain) -->
-        <div class="project-card reveal delay-2" data-category="blockchain">
-          <div class="project-image">
-            <img src="images/project-chainvault.jpg" alt="ChainVault Blockchain Dashboard" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">Blockchain</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>ChainVault</h3>
-            <p>Decentralized supply chain management platform with smart contracts, real-time asset tracking on world map, and immutable transaction ledger.</p>
-            <div class="project-tags">
-              <span class="chip">Solidity</span>
-              <span class="chip">Ethereum</span>
-              <span class="chip">Web3.js</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7. AgriSense IoT (IoT) -->
-        <div class="project-card reveal" data-category="iot">
-          <div class="project-image">
-            <img src="images/project-agrisense.jpg" alt="AgriSense IoT Dashboard" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">IoT</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>AgriSense IoT</h3>
-            <p>Smart agriculture monitoring system with real-time sensor dashboards, weather integration, automated irrigation controls, and crop health analytics.</p>
-            <div class="project-tags">
-              <span class="chip">Raspberry Pi</span>
-              <span class="chip">MQTT</span>
-              <span class="chip">React</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 8. MediBot Health (Chatbot) -->
-        <div class="project-card reveal delay-1" data-category="chatbot">
-          <div class="project-image">
-            <img src="images/project-medibot.jpg" alt="MediBot Health Assistant" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">Chatbot</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>MediBot Health</h3>
-            <p>Healthcare chatbot with intelligent symptom checker, appointment scheduling, telemedicine integration, and medical knowledge base powered by LLMs.</p>
-            <div class="project-tags">
-              <span class="chip">OpenAI</span>
-              <span class="chip">FastAPI</span>
-              <span class="chip">React</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 9. TokenForge (Blockchain) -->
-        <div class="project-card reveal delay-2" data-category="blockchain">
-          <div class="project-image">
-            <img src="images/project-tokenforge.jpg" alt="TokenForge NFT & Blockchain Protocol" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">Blockchain</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>TokenForge</h3>
-            <p>NFT marketplace with minting, trading, and royalty management on Ethereum/Polygon. Features gasless minting, auction system, and creator profiles.</p>
-            <div class="project-tags">
-              <span class="chip">Solidity</span>
-              <span class="chip">Polygon</span>
-              <span class="chip">IPFS</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 10. PredictFlow (AI/ML) -->
-        <div class="project-card reveal" data-category="aiml">
-          <div class="project-image">
-            <img src="images/project-predictflow.jpg" alt="PredictFlow AI Demand Forecasting" loading="lazy">
-            <div class="project-image-overlay"></div>
-            <span class="project-category-badge">AI / ML</span>
-            <span class="project-link-badge">Case Study →</span>
-          </div>
-          <div class="project-info">
-            <h3>PredictFlow</h3>
-            <p>Predictive analytics dashboard for retail businesses with demand forecasting, inventory optimization, and automated reporting using time-series ML models.</p>
-            <div class="project-tags">
-              <span class="chip">Python</span>
-              <span class="chip">Prophet</span>
-              <span class="chip">Dashboard</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT / CONSULTATION SECTION ===== -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Left: Info -->
-        <div class="contact-info reveal-left">
-          <span class="section-label">Get In Touch</span>
-          <h2 class="section-title">Schedule a Strategic <span>Consultation</span></h2>
-          <p>Reserve time with a senior consultant to review requirements, assess risks, and outline an implementation roadmap for your next project.</p>
-
-          <div class="contact-details">
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <i class="fas fa-phone-alt"></i>
-              </div>
-              <div class="contact-detail-text">
-                <h4>Phone</h4>
-                <a href="tel:+918920856958">+91 8920856958</a>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="contact-detail-text">
-                <h4>Email</h4>
-                <a href="mailto:sharmaarjit813@gmail.com">sharmaarjit813@gmail.com</a>
-              </div>
-            </div>
-            <div class="contact-detail">
-              <div class="contact-detail-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <div class="contact-detail-text">
-                <h4>Working Hours</h4>
-                <p>Mon – Sat: 10:00 AM – 7:00 PM IST</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-image">
-            <img src="images/about.jpg" alt="Zenith Consultation Room" loading="lazy">
-          </div>
-        </div>
-
-        <!-- Right: Form -->
-        <div class="contact-form-wrapper reveal-right">
-          <h3>Send Us a Message</h3>
-          <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-
-          <form id="contact-form" action="https://formspree.io/f/xpwzgqbl" method="POST">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="john@example.com" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 98XXXXXXXX">
-              </div>
-              <div class="form-group">
-                <label for="service">Service Interested In</label>
-                <select id="service" name="service" required>
-                  <option value="" disabled selected>Select a service</option>
-                  <option value="AI/ML Projects">AI / ML Projects</option>
-                  <option value="Chatbot Integration">Chatbot Integration</option>
-                  <option value="Full-Stack Website">Full-Stack Website</option>
-                  <option value="E-Commerce Website">E-Commerce Website</option>
-                  <option value="Blockchain Solution">Blockchain Solution</option>
-                  <option value="IoT Project">IoT Project</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Project Details</label>
-              <textarea id="message" name="message" placeholder="Tell us about your project requirements, timeline, and budget..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-bronze form-submit" style="width: 100%;">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-          </form>
-
-          <!-- Success message -->
-          <div class="form-success">
-            <i class="fas fa-check-circle"></i>
-            <h4>Message Sent Successfully!</h4>
-            <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
+<!-- SECTION 8: CONTACT + FOOTER -->
+<section id="contact" class="section-contact section-snap">
+  <canvas id="nebula-canvas" class="nebula-canvas"></canvas>
+  <div class="contact-content">
+    <p class="contact-headline pixel-text">Let's build something<br>extraordinary together.</p>
+    <p class="contact-sub pixel-text">We look forward to exploring the frontier of AI alongside you.<br>Be the signal in the noise.</p>
+    <a href="mailto:sharmaarjit813@gmail.com" class="contact-btn pixel-text" id="contact-email-btn">Get in touch &#8250;</a>
+  </div>
   <footer class="footer">
-    <!-- CTA Banner -->
-    <div class="footer-cta">
-      <div class="container">
-        <div>
-          <h2>Ready to Build Your Next <span style="color: var(--color-bronze-light);">Digital Solution?</span></h2>
-          <p>Contact our team for a free consultation and custom project proposal.</p>
-        </div>
-        <div class="footer-cta-btns">
-          <a href="#contact" class="btn btn-primary">
-            <i class="fas fa-phone-alt"></i> Get Free Quote
-          </a>
-          <a href="tel:+918920856958" class="btn btn-outline">
-            <i class="fas fa-phone"></i> Call: +91 8920856958
-          </a>
-        </div>
+    <div class="footer-left">
+      <div class="footer-logo">
+        <span class="footer-logo-icon">&#8853;</span>
+        <span class="footer-logo-text pixel-text">ZENITH</span>
       </div>
+      <p class="footer-copy pixel-text">&copy; 2026 ZENITH Collective. All rights reserved.<br>Built with &hearts; and too much coffee.</p>
     </div>
-
-    <!-- Main Footer -->
-    <div class="footer-main">
-      <div class="container">
-        <div class="footer-grid">
-          <!-- Brand Column -->
-          <div class="footer-brand">
-            <a href="#home" class="nav-brand">
-              <strong>Zenith</strong> — Engineering Intelligent Digital Solutions
-            </a>
-            <p>A premier digital solutions firm specializing in AI/ML, chatbot integration, full-stack development, e-commerce, blockchain, and IoT projects. Transforming ideas into intelligent systems.</p>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 20px;">
-              <a href="tel:+918920856958" class="footer-contact-item">
-                <i class="fas fa-phone"></i>
-                <span>+91 8920856958</span>
-              </a>
-              <a href="mailto:sharmaarjit813@gmail.com" class="footer-contact-item">
-                <i class="fas fa-envelope"></i>
-                <span>sharmaarjit813@gmail.com</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Services -->
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>AI & Machine Learning</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>Chatbot Integration</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>Full-Stack Development</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>E-Commerce Platforms</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>Blockchain Solutions</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>IoT Projects</a></li>
-            </ul>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home"><i class="fas fa-chevron-right"></i>Home</a></li>
-              <li><a href="#services"><i class="fas fa-chevron-right"></i>Services</a></li>
-              <li><a href="#projects"><i class="fas fa-chevron-right"></i>Projects</a></li>
-              <li><a href="#about"><i class="fas fa-chevron-right"></i>About Us</a></li>
-              <li><a href="#contact"><i class="fas fa-chevron-right"></i>Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Technologies -->
-          <div class="footer-col">
-            <h4>Technologies</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">React</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">Next.js</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">Python</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">TensorFlow</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">Node.js</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">Solidity</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">MongoDB</span>
-              <span style="display:inline-block;padding:4px 12px;border-radius:4px;background:rgba(166,124,82,0.12);color:rgba(255,255,255,0.6);font-size:0.73rem;font-weight:600;border:1px solid rgba(166,124,82,0.2);">AWS</span>
-            </div>
-            <div style="margin-top:28px;padding:20px;background:rgba(255,255,255,0.04);border-radius:10px;border:1px solid rgba(255,255,255,0.08);">
-              <div style="font-family:var(--font-heading);font-size:2rem;font-weight:800;color:var(--color-bronze-light);line-height:1;">50+</div>
-              <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:4px;">Projects Delivered Successfully</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="footer-bottom">
-          <p>© 2026 Zenith. All rights reserved. Engineering Intelligent Digital Solutions.</p>
-          <div class="footer-socials">
-            <a href="#" class="footer-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="footer-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://wa.me/918920856958" target="_blank" rel="noopener" class="footer-social" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="mailto:sharmaarjit813@gmail.com" class="footer-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
-          </div>
-        </div>
+    <div class="footer-right">
+      <div class="footer-col">
+        <p class="footer-col-title pixel-text">Team</p>
+        <a href="#card-arijit"  class="footer-link pixel-text" id="footer-arijit">Arijit Sharma</a>
+        <a href="#card-avinash" class="footer-link pixel-text" id="footer-avinash">Avinash Lodhi</a>
+        <a href="#card-lavi"    class="footer-link pixel-text" id="footer-lavi">Lavi Singh</a>
+      </div>
+      <div class="footer-col">
+        <p class="footer-col-title pixel-text">Connect</p>
+        <a href="mailto:sharmaarjit813@gmail.com" class="footer-link pixel-text" id="footer-email">Email</a>
+        <a href="#" class="footer-link pixel-text" id="footer-github">GitHub</a>
+        <a href="#" class="footer-link pixel-text" id="footer-linkedin">LinkedIn</a>
       </div>
     </div>
   </footer>
+</section>
 
-  <!-- Back to Top -->
-  <button class="back-to-top" aria-label="Back to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- JavaScript -->
-  <script src="js/main.js"></script>
+<div id="cursor-dot"  class="cursor-dot"></div>
+<div id="cursor-ring" class="cursor-ring"></div>
+<script src="script.js"></script>
 </body>
 </html>
