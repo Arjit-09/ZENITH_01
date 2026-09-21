@@ -42,7 +42,7 @@
 </div>
 
 <!-- SECTION 1: HERO -->
-<section id="hero" class="hero section-snap">
+<section id="hero" class="hero section-snap" data-section-index="0">
   <canvas id="starfield" class="hero-canvas"></canvas>
   <div class="hero-content">
     <div class="hero-left">
@@ -74,7 +74,7 @@
 </section>
 
 <!-- SECTION 2: ABOUT -->
-<section id="about" class="section-about section-snap">
+<section id="about" class="section-about section-snap" data-section-index="1">
   <div class="about-container">
     <div class="about-left">
       <div class="section-label pixel-text">// Who we are</div>
@@ -98,7 +98,7 @@
 </section>
 
 <!-- SECTION 3: STATS -->
-<section id="stats" class="section-stats section-snap">
+<section id="stats" class="section-stats section-snap" data-section-index="2">
   <div class="section-phase-header pixel-text">
     <span class="phase-arrow">&#8249;</span>
     <span class="phase-title">Exploration phase</span>
@@ -140,7 +140,7 @@
 </section>
 
 <!-- SECTION 4: TEAM -->
-<section id="team" class="section-team section-snap">
+<section id="team" class="section-team section-snap" data-section-index="3">
   <div class="section-phase-header pixel-text">
     <span class="phase-arrow">&#8249;</span>
     <span class="phase-title">The collective</span>
@@ -237,7 +237,7 @@
 </section>
 
 <!-- SECTION 5: PROJECTS (Kimi-style orbital ring + fan carousel) -->
-<section id="projects" class="section-projects section-snap">
+<section id="projects" class="section-projects section-snap" data-section-index="4">
   <canvas id="project-bg-canvas" class="project-bg-canvas"></canvas>
 
   <!-- ORBITAL RING VIEW -->
@@ -286,7 +286,7 @@
 </section>
 
 <!-- SECTION 6: SKILLS -->
-<section id="skills" class="section-skills section-snap">
+<section id="skills" class="section-skills section-snap" data-section-index="5">
   <div class="section-phase-header pixel-text">
     <span class="phase-arrow">&#8249;</span>
     <span class="phase-title">Tech arsenal</span>
@@ -316,7 +316,7 @@
 </section>
 
 <!-- SECTION 7: EXPERIENCE -->
-<section id="experience" class="section-experience section-snap">
+<section id="experience" class="section-experience section-snap" data-section-index="6">
   <div class="section-phase-header pixel-text">
     <span class="phase-arrow">&#8249;</span>
     <span class="phase-title">Career trajectory</span>
@@ -369,7 +369,7 @@
 </section>
 
 <!-- SECTION 8: CONTACT + FOOTER -->
-<section id="contact" class="section-contact section-snap">
+<section id="contact" class="section-contact section-snap" data-section-index="7">
   <canvas id="nebula-canvas" class="nebula-canvas"></canvas>
   <div class="contact-content">
     <p class="contact-headline pixel-text">Let's build something<br>extraordinary together.</p>
@@ -403,6 +403,28 @@
 
 <div id="cursor-dot"  class="cursor-dot"></div>
 <div id="cursor-ring" class="cursor-ring"></div>
+
+<!-- TRANSITION OVERLAY CANVAS -->
+<canvas id="transition-overlay" class="transition-overlay"></canvas>
+
+<!-- SECTION NAV DOTS (right side) -->
+<nav class="section-nav-dots" id="section-nav-dots" aria-label="Section navigation">
+  <!-- dots injected by JS -->
+</nav>
+
+<!-- SECTION PROGRESS BAR (left edge) -->
+<div class="section-progress-bar" id="section-progress-bar">
+  <div class="section-progress-fill" id="section-progress-fill"></div>
+</div>
+
+<!-- SCROLL DIRECTION INDICATOR (bottom-center, like Kimi) -->
+<div class="kimi-scroll-hint" id="kimi-scroll-hint">
+  <svg viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 1L12 15M6 9L12 15L18 9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+  <span id="kimi-scroll-label" class="pixel-text">Swipe to explore</span>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>
