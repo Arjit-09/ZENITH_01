@@ -726,19 +726,18 @@ function buildOrbitalWheel(cat) {
 
   const filtered = cat === 'all' ? PROJECTS : PROJECTS.filter(p => p.cat === cat);
   const N = filtered.length;
-  const RADIUS = 280; // orbit radius — ring div is 660x660, center = 330
-  const CENTER = 330;
+  const RADIUS_PCT = 41.2; // 41.2% matches 82.4% circular orbit line at any container width
 
   filtered.forEach((proj, i) => {
     const angle = (i / N) * 2 * Math.PI - Math.PI / 2;
-    const x = CENTER + RADIUS * Math.cos(angle);
-    const y = CENTER + RADIUS * Math.sin(angle);
+    const xPct = 50 + RADIUS_PCT * Math.cos(angle);
+    const yPct = 50 + RADIUS_PCT * Math.sin(angle);
     const angleDeg = angle * (180 / Math.PI) + 90;
 
     const card = document.createElement('div');
     card.className = 'orbit-card';
-    card.style.left = x + 'px';
-    card.style.top  = y + 'px';
+    card.style.left = `${xPct}%`;
+    card.style.top  = `${yPct}%`;
     card.style.setProperty('--rot', angleDeg + 'deg');
     card.style.transform = `translate(-50%, -50%) rotate(${angleDeg}deg)`;
     card.innerHTML = `
@@ -1318,7 +1317,7 @@ class ScrollEngine {
 
   canElementScroll(target, deltaY) {
     let el = target;
-    while (el && el !== document.body && !el.classList?.contains('section-snap')) {
+    while (el && el !== document.body && el !== document.documentElement) {
       const style = window.getComputedStyle(el);
       const overflowY = style.overflowY;
       const overflowX = style.overflowX;
@@ -1443,6 +1442,7 @@ class ScrollEngine {
 
     const fromSec = this.sections[this.currentIndex];
     const toSec = this.sections[nextIdx];
+    toSec.scrollTop = 0;
 
     // Clean any residual transition classes
     this.sections.forEach(s => {

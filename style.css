@@ -144,6 +144,7 @@ body::after {
   inset: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -668,7 +669,7 @@ body::after {
 }
 .proj-orbit-line {
   position:absolute; top:50%; left:50%;
-  width:560px; height:560px;
+  width:82.4%; height:82.4%;
   transform:translate(-50%,-50%);
   border:1px solid rgba(255,255,255,0.12);
   border-radius:50%;
@@ -1064,11 +1065,16 @@ body::after {
    RESPONSIVE — Fully adaptive for all devices
 ════════════════════════════════════════════════════════════ */
 
+/* Hide custom cursor dots on coarse touch devices */
+@media (hover: none) and (pointer: coarse) {
+  #cursor-dot, #cursor-ring { display: none !important; }
+}
+
 /* ── Phase header (all sections) ──────────────────────── */
 .section-phase-header {
   text-align:center; font-size:clamp(20px,2.5vw,30px);
   color:var(--text-dim); letter-spacing:.25em;
-  margin-bottom:clamp(24px,4vh,52px);
+  margin-bottom:clamp(18px,3.5vh,48px);
   display:flex; align-items:center; justify-content:center; gap:20px;
   font-family: var(--font-pixel);
 }
@@ -1081,88 +1087,306 @@ body::after {
 @media (max-width:1100px) {
   .stats-grid    { grid-template-columns:repeat(3,1fr); }
   .skills-grid   { grid-template-columns:repeat(4,1fr); }
-  .proj-orbit-wrapper { width:540px; height:540px; }
-  .proj-orbit-line { width:440px; height:440px; }
-  .section-snap { padding: 80px 36px 60px; }
+  .proj-orbit-wrapper { width:520px; height:520px; }
+  .section-snap  { padding: 80px 36px 60px; }
 }
 
 @media (max-width:900px) {
+  .section-snap {
+    padding: 72px 20px 50px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
   .hero-content { grid-template-columns:1fr; gap:20px; }
   .hero-right   { align-items:flex-start; align-self:auto; }
   .hero-center  { display:none; }
-  .about-container { grid-template-columns:1fr; gap:28px; }
+  .about-container { grid-template-columns:1fr; gap:24px; }
   .team-grid    { grid-template-columns:1fr; gap:16px; overflow-y: auto; max-height: calc(100vh - 160px); }
   .stats-grid   { grid-template-columns:repeat(2,1fr); }
   .skills-grid  { grid-template-columns:repeat(3,1fr); }
   .proj-orbit-wrapper { width:340px; height:340px; }
-  .proj-orbit-line { width:270px; height:270px; }
   .orbit-card   { width:60px; height:76px; }
   .footer { flex-direction:column; gap:20px; padding:20px 24px; }
   .footer-right { flex-direction:column; gap:16px; }
   .proj-card-3d { width:240px; height:440px; }
-  .proj-card-3d.pos-left1  { transform:translateX(-200px) translateY(40px) rotateZ(-12deg) scale(0.88); }
-  .proj-card-3d.pos-right1 { transform:translateX(200px)  translateY(40px) rotateZ(12deg) scale(0.88); }
+  .proj-card-3d.pos-left1  { transform:translateX(-170px) translateY(36px) rotateZ(-11deg) scale(0.88); }
+  .proj-card-3d.pos-right1 { transform:translateX(170px)  translateY(36px) rotateZ(11deg) scale(0.88); }
   .proj-card-3d.pos-left2, .proj-card-3d.pos-right2 { opacity:0; pointer-events:none; }
-  .section-snap { padding: 72px 20px 60px; }
-  /* Hide nav dots on small screens, show at bottom */
-  .section-nav-dots { right: 10px; gap: 9px; }
+  .section-nav-dots { right: 8px; gap: 8px; }
   .section-dot { width:5px; height:5px; }
   .section-dot.active { height: 16px; }
   .kimi-scroll-hint span { font-size: 13px; }
   .about-bio-main { font-size: 20px; }
   .about-bio-sub  { font-size: 18px; }
   .team-card { padding: 24px 18px; }
-  .stat-card { padding: 28px 16px; }
+  .stat-card { padding: 24px 16px; }
+}
+
+@media (max-width:768px) {
+  .section-phase-header {
+    font-size: 20px;
+    margin-bottom: 14px;
+    gap: 12px;
+  }
+  .phase-arrow { font-size: 22px; }
+  .phase-title { font-size: 22px; }
+
+  /* Experience Career Trajectory: Vertical neon roadmap for clean mobile reading */
+  .experience-timeline {
+    width: 100%;
+    max-width: 360px;
+    margin: 8px auto 0;
+    padding: 0 12px;
+  }
+  .timeline-svg {
+    display: none !important;
+  }
+  .timeline-labels {
+    position: static !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding-left: 28px !important;
+    border-left: 2px dashed rgba(255, 255, 255, 0.25) !important;
+    margin: 4px auto 0 !important;
+    width: 100% !important;
+  }
+  .timeline-label {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+  }
+  .timeline-label::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #000;
+    border: 2px solid rgba(255,255,255,0.7);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
+  }
+  .timeline-label:last-child::before {
+    background: #00e5ff;
+    border-color: #00e5ff;
+    box-shadow: 0 0 14px #00e5ff;
+  }
+  .timeline-label .tl-title { font-size: 19px !important; color: #fff !important; }
+  .timeline-label .tl-sub { font-size: 14px !important; color: var(--text-muted) !important; }
+  .timeline-label .tl-date { font-size: 12px !important; color: #38bdf8 !important; letter-spacing: .08em; }
 }
 
 @media (max-width:600px) {
-  .stats-grid  { grid-template-columns:1fr 1fr; overflow-y: auto; max-height: calc(100vh - 180px); }
-  .skills-grid { grid-template-columns:repeat(2,1fr); overflow-y: auto; max-height: calc(100vh - 180px); }
-  .hero-title  { font-size:clamp(52px,14vw,82px); }
-  .carousel-title { font-size:22px; min-width:160px; }
-  .carousel-top-bar { padding:0 16px; gap:6px; }
-  .section-snap { padding: 64px 16px 56px; }
-  /* Nav dots at very small => hide, use swipe only */
-  .section-nav-dots { display: none; }
-  .section-progress-bar { display: none; }
-  /* Hero responsive */
-  .hero-cta-text { font-size:clamp(36px,10vw,56px); }
-  .hero-info-box { max-width: 100%; }
-  /* Team on mobile: horizontal scroll */
-  .team-grid { grid-template-columns: repeat(3, min(85vw, 340px)); overflow-x: auto; overflow-y: hidden; max-height: none; gap: 12px; flex-direction: row; display: flex; scroll-snap-type: x mandatory; }
-  .team-card { scroll-snap-align: center; min-width: min(85vw, 320px); }
-  /* About */
-  .about-container { gap: 20px; }
-  .about-bio-main { font-size: 18px; }
-  .about-bio-sub { font-size: 16px; }
-  /* Projects orbit */
-  .proj-orbit-wrapper { width: 280px; height: 280px; }
-  .proj-orbit-line { width: 220px; height: 220px; }
-  .orbit-card { width: 48px; height: 62px; }
-  /* Carousel */
-  .proj-card-3d { width: 200px; height: 380px; }
-  .proj-card-3d.pos-left1  { transform:translateX(-160px) translateY(30px) rotateZ(-10deg) scale(0.85); opacity:.7; }
-  .proj-card-3d.pos-right1 { transform:translateX(160px)  translateY(30px) rotateZ(10deg) scale(0.85); opacity:.7; }
-  /* Stats */
-  .stat-number { font-size: clamp(40px,10vw,60px); }
-  /* Skills */
-  .skill-card { padding: 20px 10px; }
-  .skill-name { font-size: 16px; }
-  /* Timeline */
-  .timeline-svg { height: 200px; }
-  .tl-title { font-size: 16px; }
-  .tl-sub   { font-size: 14px; }
-  .tl-date  { font-size: 13px; }
-  /* Experience timeline labels on mobile */
-  .timeline-labels { height: 80px; }
-  .timeline-label { gap: 2px; }
-  /* Contact */
-  .contact-headline { font-size: clamp(28px,8vw,48px); }
-  .contact-sub { font-size: 18px; }
-  /* Footer */
-  .footer { padding: 16px; }
-  .footer-logo-text { font-size: 20px; }
-  .footer-copy { font-size: 16px; }
-  .footer-col-title { font-size: 16px; }
-  .footer-link { font-size: 16px; }
+  .section-snap {
+    padding: 60px 16px 36px;
+    justify-content: flex-start;
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain;
+  }
+  /* Navigation & Chrome */
+  .section-nav-dots { display: none !important; }
+  .section-progress-bar { display: none !important; }
+  .kimi-scroll-hint { bottom: 10px; }
+  .kimi-scroll-hint span { font-size: 12px; }
+
+  /* Hero Section */
+  .hero-content {
+    gap: 14px;
+    min-height: auto;
+    padding-bottom: 24px;
+  }
+  .hero-left { gap: 12px; }
+  .hero-title { font-size: clamp(38px, 12vw, 58px); line-height: 0.95; }
+  .hero-subtitle { font-size: 15px; line-height: 1.35; }
+  .hero-info-box { padding: 12px 14px; max-width: 100%; gap: 6px; }
+  .hero-tag { font-size: 15px; }
+  .hero-desc { font-size: 13px; line-height: 1.4; }
+  .hero-right { align-items: flex-start; gap: 12px; padding-bottom: 16px; }
+  .hero-cta-label { font-size: 14px; }
+  .hero-cta-text { font-size: clamp(26px, 8vw, 40px); text-align: left; line-height: 1.1; }
+  .hero-cta-btns { flex-direction: row; gap: 8px; flex-wrap: wrap; align-items: flex-start; }
+  .cta-btn { font-size: 15px; padding: 8px 18px; }
+
+  /* About Section */
+  .about-container { gap: 14px; }
+  .about-bio { gap: 10px; }
+  .about-bio-main { font-size: 16px; line-height: 1.45; }
+  .about-bio-sub { font-size: 13.5px; line-height: 1.4; }
+  .about-table { gap: 6px; margin-top: 8px; }
+  .about-row { padding: 6px 0; gap: 6px; }
+  .about-from { font-size: 14px; }
+  .about-arrow { font-size: 13px; }
+  .about-to { font-size: 14px; }
+
+  /* Stats Section */
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .stat-card { padding: 14px 12px; gap: 6px; }
+  .stat-number { font-size: clamp(32px, 8vw, 44px); }
+  .stat-divider { width: 22px; }
+  .stat-title { font-size: 15px; }
+  .stat-desc { font-size: 12px; line-height: 1.35; }
+
+  /* Team Section — Horizontal swipe snap */
+  .team-grid {
+    grid-template-columns: repeat(3, min(84vw, 320px));
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: none;
+    gap: 12px;
+    flex-direction: row;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 4px 16px;
+  }
+  .team-card {
+    scroll-snap-align: center;
+    min-width: min(84vw, 320px);
+    max-width: min(84vw, 320px);
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .team-name { font-size: 22px; }
+  .team-role { font-size: 15px; }
+  .team-company { font-size: 13px; }
+  .team-bio { font-size: 13px; line-height: 1.45; }
+  .team-edu, .team-exp { font-size: 13px; }
+  .tag { font-size: 12px; padding: 3px 8px; }
+  .team-link { font-size: 13px; }
+
+  /* Section 5: Projects — Perfectly centered orbital ring */
+  .proj-wheel-view { gap: 8px; width: 100%; }
+  .proj-category-bar {
+    gap: 4px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .proj-cat-btn {
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 3px;
+  }
+  .proj-orbit-wrapper {
+    width: min(290px, 80vw);
+    height: min(290px, 80vw);
+    margin: 0 auto;
+  }
+  .proj-planet-canvas {
+    width: 100px;
+    height: 100px;
+  }
+  .orbit-center-label { gap: 3px; }
+  #orbit-cat-label { font-size: 16px; }
+  .orbit-center-sub { font-size: 11px; }
+  .orbit-card {
+    width: 44px;
+    height: 58px;
+    padding: 3px 4px;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  }
+  .orbit-card-corner { font-size: 7px; }
+  .orbit-card-corner.bot { font-size: 7px; }
+  .orbit-emblem-glyph { width: 16px; height: 16px; font-size: 9px; }
+  .orbit-emblem-text { font-size: 5px; letter-spacing: 0.08em; }
+  .proj-wheel-hint { font-size: 12px; margin-top: 4px; }
+
+  /* Carousel view on Mobile */
+  .carousel-top-bar {
+    padding: 0 8px;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+  .carousel-back-btn { font-size: 12px; padding: 4px 10px; }
+  .carousel-title-bar { gap: 10px; }
+  .carousel-title { font-size: 17px; min-width: 0; max-width: 170px; }
+  .carousel-title-arrow { font-size: 18px; padding: 2px 8px; }
+  .carousel-stage { height: 370px; perspective: 800px; }
+  .proj-card-3d { width: 230px; height: 350px; }
+  .proj-card-3d.pos-center {
+    box-shadow: 2px 2px 0 #fff, 3px 3px 0 #000, 0 14px 28px rgba(0,0,0,0.8);
+  }
+  .proj-card-3d.pos-left1 {
+    transform: translateX(-65px) translateY(16px) rotateZ(-6deg) scale(0.85);
+    opacity: 0.6;
+  }
+  .proj-card-3d.pos-right1 {
+    transform: translateX(65px) translateY(16px) rotateZ(6deg) scale(0.85);
+    opacity: 0.6;
+  }
+  .proj-card-3d.pos-left2, .proj-card-3d.pos-right2 { opacity: 0; pointer-events: none; }
+  .proj-card-header-bar { padding: 8px 12px; }
+  .proj-card-header-title { font-size: 15px; max-width: 150px; }
+  .proj-card-header-cat { font-size: 12px; }
+  .proj-card-visual { height: 115px; }
+  .proj-card-body { padding: 10px 12px; gap: 6px; }
+  .proj-card-desc { font-size: 12.5px; line-height: 1.35; }
+  .proj-stack-tag { font-size: 10.5px; padding: 2px 6px; }
+  .proj-card-quote { font-size: 11.5px; }
+  .proj-card-author { font-size: 11px; }
+  .proj-card-footer { padding: 6px 12px; }
+  .proj-card-badge { font-size: 11px; padding: 2px 8px; }
+  .proj-card-link-icon { font-size: 12px; }
+  .carousel-cta-row { margin-top: 6px; }
+  .carousel-cta { font-size: 14px; padding: 8px 24px; }
+
+  /* Skills Section */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    max-height: calc(100dvh - 160px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 24px;
+  }
+  .skill-card { padding: 12px 6px; gap: 6px; }
+  .skill-icon { font-size: 20px; }
+  .skill-name { font-size: 13.5px; }
+
+  /* Contact & Footer */
+  .contact-content { gap: 16px; padding: 10px 0; }
+  .contact-headline { font-size: clamp(26px, 7vw, 38px); line-height: 1.1; }
+  .contact-sub { font-size: 14.5px; line-height: 1.45; }
+  .contact-btn { font-size: 15px; padding: 9px 22px; }
+  .footer {
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px 0;
+    width: 100%;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .footer-left { gap: 6px; }
+  .footer-logo { gap: 8px; margin-bottom: 6px; }
+  .footer-logo-icon { font-size: 20px; }
+  .footer-logo-text { font-size: 18px; }
+  .footer-copy { font-size: 12px; }
+  .footer-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  .footer-col-title { font-size: 13px; }
+  .footer-link { font-size: 12.5px; }
 }
